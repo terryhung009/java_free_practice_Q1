@@ -5,8 +5,9 @@ import java.nio.Buffer;
 import java.sql.SQLOutput;
 
 public class Main {
-    /**定義：質數為
-     *
+    /**定義：質數為除了1及本身以外，無法被其他整數整除的數字
+     *思考方式；將變數num用迴圈除以小於1/2num的數字，如果沒有可以整除的數字，則num是質數
+     * 如果有可以整除的數字，則num不是質數
      *
      * @param args
      * @throws IOException
@@ -30,7 +31,7 @@ public class Main {
                 if((num % i ) == 0){
                     if(isPrime == true){
                         isPrime = false;
-                        System.out.print(num+" 不是質數，可以被" + i );
+                        System.out.print(num+" 不是質數，可以被" + i + "  整除");
                     }
                     else{
                         System.out.println(" " + i);
@@ -41,7 +42,7 @@ public class Main {
             if( isPrime == true){
                 System.out.println(num + " 是質數");
             }else {
-                System.out.println("  整除");
+                System.out.println("");
             }
 
 
